@@ -9,7 +9,7 @@ Applikationen ska hämta data från trafikverkets API och presentera detta på e
 
 
 ######Tekniker    
-Serversidan av applikationen kommer att skivas i C# med ramverket ASP.NET MVC. På klienten kommer Javascript och Javascriptbaserade ramverk användas (bl.a. JQuery, Leaflet.js). Önskvärt är även att Googles trafkflöde (vägstreckor visas röda, gula eller gröna beroende på trafikflödet).    
+Serversidan av applikationen kommer att skivas i C# med ramverket ASP.NET MVC. På klienten kommer Javascript och Javascriptbaserade ramverk användas (bl.a. JQuery, Leaflet.js). Önskvärt är även att Googles trafkflöde kan visas (vägstreckor visas röda, gula eller gröna beroende på trafikflödet).    
 
 
 
