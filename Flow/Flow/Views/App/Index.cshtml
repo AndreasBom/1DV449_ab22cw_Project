@@ -25,9 +25,11 @@
             <div id="trafficConditions-toggle" class="btn traffic-toggle-off">Trafikvarning</div>
             <div id="trafficFlow-toggle" class=" btn traffic-toggle-off">Trafikflöde</div>
             <div id="trafficOverview-toggle" class=" btn traffic-toggle-on">Översikt</div>
+            @Html.ActionLink("Admin", "Index", "Admin", null, new {@class="btn adminBtn"} );
+            @*<div id="adminBtn" class="btn">Admin</div>*@
         </div>
         <div id="trafficOverview" class="traffic-toggle-on">
-            <div id="trafficOverview-title"></div>
+            <div id="trafficOverview-title">Ingen data</div>
             <div id="trafficOverview-body"></div>
         </div>
         <div id="map">

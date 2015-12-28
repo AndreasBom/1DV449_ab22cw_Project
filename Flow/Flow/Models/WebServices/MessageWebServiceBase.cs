@@ -18,7 +18,7 @@ namespace Flow.Models.WebServices
         protected MessageWebServiceBase()
         {
             Webclient = new WebClient();
-            Webclient.Headers.Add("Referer", "http://andreasbom.se");
+            Webclient.Headers.Add("Referer", "Programmeringsstudent Linneuniversitetet: http://andreasbom.se");
         }
 
         public JObject FetchJsonData(string requestString)

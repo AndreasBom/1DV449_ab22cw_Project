@@ -36,77 +36,77 @@ namespace Flow.Models.WebServices
 
         public IEnumerable<RoadCondition> GetRoadConditions()
         {
-            string request = "<REQUEST> " +
-                   "<LOGIN authenticationkey = '" + Authenticationkey + "' />" +
-                   "<QUERY objecttype='RoadCondition'>" +
-                   "<INCLUDE>Id</INCLUDE>" +
-                   "<INCLUDE>ModifiedTime</INCLUDE>" +
-                   "<INCLUDE>ConditionCode</INCLUDE>" +
-                   "<INCLUDE>ConditionInfo</INCLUDE>" +
-                   "<INCLUDE>ConditionText</INCLUDE>" +
-                   "<INCLUDE>CountyNo</INCLUDE>" +
-                   "<INCLUDE>Creator</INCLUDE>" +
-                   "<INCLUDE>LocationText</INCLUDE>" +
-                   "<INCLUDE>RoadNumber</INCLUDE>" +
-                   "<INCLUDE>RoadNumberNumeric</INCLUDE>" +
-                   "<INCLUDE>StartTime</INCLUDE>" +
-                   "<INCLUDE>Cause</INCLUDE>" +
-                   "<INCLUDE>Geometry.WGS84</INCLUDE>" +
-                   "<FILTER>" +
-                   "<EQ name = 'CountyNo' value='13' />" +
-                   "</FILTER>" +
-                   "</QUERY>" +
-                   "</REQUEST>";
-            var json = FetchJsonData(request);
+            //string request = "<REQUEST> " +
+            //       "<LOGIN authenticationkey = '" + Authenticationkey + "' />" +
+            //       "<QUERY objecttype='RoadCondition'>" +
+            //       "<INCLUDE>Id</INCLUDE>" +
+            //       "<INCLUDE>ModifiedTime</INCLUDE>" +
+            //       "<INCLUDE>ConditionCode</INCLUDE>" +
+            //       "<INCLUDE>ConditionInfo</INCLUDE>" +
+            //       "<INCLUDE>ConditionText</INCLUDE>" +
+            //       "<INCLUDE>CountyNo</INCLUDE>" +
+            //       "<INCLUDE>Creator</INCLUDE>" +
+            //       "<INCLUDE>LocationText</INCLUDE>" +
+            //       "<INCLUDE>RoadNumber</INCLUDE>" +
+            //       "<INCLUDE>RoadNumberNumeric</INCLUDE>" +
+            //       "<INCLUDE>StartTime</INCLUDE>" +
+            //       "<INCLUDE>Cause</INCLUDE>" +
+            //       "<INCLUDE>Geometry.WGS84</INCLUDE>" +
+            //       "<FILTER>" +
+            //       "<EQ name = 'CountyNo' value='13' />" +
+            //       "</FILTER>" +
+            //       "</QUERY>" +
+            //       "</REQUEST>";
+            //var json = FetchJsonData(request);
 
-            var result = (from item in json["RESPONSE"]["RESULT"][0]["RoadCondition"]
-                          select new RoadCondition(item)).ToList();
-
-            //FOR DEV
-            //string request = "";
-            //var path = HttpContext.Current.Server.MapPath("~/App_Data/RoadCondition.json");
-            //var pathShort = HttpContext.Current.Server.MapPath("~/App_Data/ShortRoadCondition.json");
-            //using (var reader = new StreamReader(pathShort))
-            //{
-            //    request = reader.ReadToEnd();
-            //}
-
-            ////var json = FetchJsonData(request);
-            //var json = JObject.Parse(request);
             //var result = (from item in json["RESPONSE"]["RESULT"][0]["RoadCondition"]
             //              select new RoadCondition(item)).ToList();
+
+            //FOR DEV
+            string request = "";
+            var path = HttpContext.Current.Server.MapPath("~/App_Data/RoadCondition.json");
+            var pathShort = HttpContext.Current.Server.MapPath("~/App_Data/ShortRoadCondition.json");
+            using (var reader = new StreamReader(pathShort))
+            {
+                request = reader.ReadToEnd();
+            }
+
+            //var json = FetchJsonData(request);
+            var json = JObject.Parse(request);
+            var result = (from item in json["RESPONSE"]["RESULT"][0]["RoadCondition"]
+                          select new RoadCondition(item)).ToList();
 
             return result;
         }
 
         public IEnumerable<RoadConditionOverview> GetRoadConditionOverviews()
         {
-            string request = "<REQUEST> " +
-                   "<LOGIN authenticationkey = '" + Authenticationkey + "' />" +
-                   "<QUERY objecttype='RoadConditionOverview'>" +
-                   "<FILTER>" +
-                   "<EQ name = 'CountyNo' value='13' />" +
-                   "</FILTER>" +
-                   "</QUERY>" +
-                   "</REQUEST>";
-            var json = FetchJsonData(request);
+            //string request = "<REQUEST> " +
+            //       "<LOGIN authenticationkey = '" + Authenticationkey + "' />" +
+            //       "<QUERY objecttype='RoadConditionOverview'>" +
+            //       "<FILTER>" +
+            //       "<EQ name = 'CountyNo' value='13' />" +
+            //       "</FILTER>" +
+            //       "</QUERY>" +
+            //       "</REQUEST>";
+            //var json = FetchJsonData(request);
 
-            var result = (from item in json["RESPONSE"]["RESULT"][0]["RoadConditionOverview"]
-                          select new RoadConditionOverview(item)).ToList();
-
-            //TextFile
-            //string request = "";
-            //var path = HttpContext.Current.Server.MapPath("~/App_Data/RoadConditionOverview.json");
-            ////var pathShort = HttpContext.Current.Server.MapPath("~/App_Data/ShortRoadCondition.json");
-            //using (var reader = new StreamReader(path))
-            //{
-            //    request = reader.ReadToEnd();
-            //}
-
-            ////var json = FetchJsonData(request);
-            //var json = JObject.Parse(request);
             //var result = (from item in json["RESPONSE"]["RESULT"][0]["RoadConditionOverview"]
             //              select new RoadConditionOverview(item)).ToList();
+
+            //TextFile
+            string request = "";
+            var path = HttpContext.Current.Server.MapPath("~/App_Data/RoadConditionOverview.json");
+            //var pathShort = HttpContext.Current.Server.MapPath("~/App_Data/ShortRoadCondition.json");
+            using (var reader = new StreamReader(path))
+            {
+                request = reader.ReadToEnd();
+            }
+
+            //var json = FetchJsonData(request);
+            var json = JObject.Parse(request);
+            var result = (from item in json["RESPONSE"]["RESULT"][0]["RoadConditionOverview"]
+                          select new RoadConditionOverview(item)).ToList();
 
             return result;
         }

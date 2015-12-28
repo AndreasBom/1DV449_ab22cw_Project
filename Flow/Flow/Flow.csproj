@@ -2155,6 +2155,7 @@
     <Content Include="Views\App\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Admin\" />
     <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿
+﻿/************** Variables start***********************/
 var app = {};
 
 app.lat = 57.0;
@@ -8,7 +8,7 @@ app.zoom = 5;
 app.roadConditionsOverview = [];
 app.roadConditions = [];
 app.roadLines = [];
-
+/************** Variables End***********************/
 //Initialize map
 app.initMap = function () {
     var mapOption = {
@@ -28,6 +28,7 @@ app.initMap = function () {
     console.log("app.initMap");
 }
 
+/************** Ajax start ***********************/
 app.getRoadConditionsOverview = function () {
     $.ajax({
         type: "GET",
@@ -38,8 +39,10 @@ app.getRoadConditionsOverview = function () {
             for (var i = 0; i < data.length; i++) {
                 app.addObjToArray(data, app.roadConditionsOverview);
             }
+            //Render overview window
+            app.OverviewWindow(app.roadConditionsOverview);
             //Render markers
-            app.setMarkers(app.roadConditionsOverview);
+            //app.setMarkers(app.roadConditionsOverview);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("Error while fetching data");
@@ -69,36 +72,39 @@ app.getRoadConditions = function () {
         dataType: "json"
     });
 }
+/************** Ajax end ***********************/
 
-//Add json objects to array
-app.addObjToArray = function (jsonData, array) {
-    jsonData.forEach(function (item) {
-        array.push(item);
-    });
-}
+/************** Layers and Views start ***********************/
 
-//Markers
-app.setMarkers = function (arrayWithObjects) {
-    console.log("setMarkers");
-    var marker;
-    var infowindow = new google.maps.InfoWindow;
+//   Markers not in use for the moment
+//app.setMarkers = function (arrayWithObjects) {
+//    console.log("setMarkers");
+//    var marker;
+//    var infowindow = new google.maps.InfoWindow;
+
+//    for (var i = 0; i < arrayWithObjects.length; i++) {
+//        marker = new google.maps.Marker({
+//            position: new google.maps.LatLng(arrayWithObjects[i].Lat, arrayWithObjects[i].Lng),
+//            map: app.map
+//        });
+
+//        //Event Listener for markers
+//        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+//            return function () {
+//                infowindow.setContent("<h3>" + arrayWithObjects[i].Text + "</h3>");
+//                infowindow.open(app.map, marker);
+//            }
+//        })(marker, i));
+//    }
+//}
+
+//Overview window
+app.OverviewWindow = function (arrayWithObjects) {
+    var splitDateAndTime = arrayWithObjects[0].ModifiedTime.split("T"); //Original date format==yyyy-MM-ddTHH:mm:ss
     
-
-    for (var i = 0; i < arrayWithObjects.length; i++) {
-
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(arrayWithObjects[i].Lat, arrayWithObjects[i].Lng),
-            map: app.map
-        });
-
-        //Event Listener for markers
-        google.maps.event.addListener(marker, 'click', (function (marker, i) {
-            return function () {
-                infowindow.setContent("<h3>" + arrayWithObjects[i].Text + "</h3>");
-                infowindow.open(app.map, marker);
-            }
-        })(marker, i));
-    }
+    $("#trafficOverview-title").html("<h5>" + arrayWithObjects[0].LocationText + "</h5>");
+    $("#trafficOverview-body").html("<p>" + arrayWithObjects[0].Text + "</p>")
+        .append("<p>Ändrad: " + splitDateAndTime[0] + " kl" + splitDateAndTime[1].substr(0, 5) + "</p>");
 }
 
 //Road Lines
@@ -136,7 +142,9 @@ app.addLine = function (arrayWithObjects) {
         }   
     }
 }
+/************** Layers and Views end ***********************/
 
+/************** Events start ***********************/
 //Toggle road overview 
 $("#trafficOverview-toggle").on('click', function() {
     $(this).toggleClass("traffic-toggle-off traffic-toggle-on");
@@ -163,11 +171,21 @@ $("#trafficFlow-toggle").on('click', function () {
     } 
 });
 
+//$("#toggle-menu").on('click', function() {
+//    $("#overview").slideToggle(1);
+//    $(this).toggleClass("glyphicon glyphicon-minus glyphicon glyphicon-plus");
+//});
+/************** Events end ***********************/
 
-$("#toggle-menu").on('click', function() {
-    $("#overview").slideToggle(1);
-    $(this).toggleClass("glyphicon glyphicon-minus glyphicon glyphicon-plus");
-});
+/***************** Util ***********************/
+
+//Add json objects to array
+app.addObjToArray = function (jsonData, array) {
+    jsonData.forEach(function (item) {
+        array.push(item);
+    });
+}
+
 
 //Formatting a string with coordinates to google.maps.LatLng
 app.formatLineString = function (lineString) {
