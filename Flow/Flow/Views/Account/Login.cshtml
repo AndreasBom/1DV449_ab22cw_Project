@@ -1,0 +1,18 @@
+﻿@using Flow.Models
+@model Flow.Models.LoginViewModel
+@{
+    ViewBag.Title = "Logga in";
+}
+
+
+<div class="row">
+    <div class="">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
