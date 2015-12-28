@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Flow";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/leaflet.css" rel="stylesheet" />
+    <script src="~/Scripts/leaflet-src.js"></script>
+</head>
+<body>
+    <div class="page_wrapper">
+        @*<div id="menu-layer">
+            <div id="overview-title">Meny <span id="toggle-menu" class="glyphicon glyphicon glyphicon-minus" style="float: right; margin-right: 5px;"></span></div>
+            <div id="overview"></div>
+        </div>*@
+        <div id="traffic-menu">
+            <div id="trafficConditions-toggle" class="btn traffic-toggle-off">Trafikvarning</div>
+            <div id="trafficFlow-toggle" class=" btn traffic-toggle-off">Trafikflöde</div>
+            <div id="trafficOverview-toggle" class=" btn traffic-toggle-on">Översikt</div>
+        </div>
+        <div id="trafficOverview" class="traffic-toggle-on">
+            <div id="trafficOverview-title"></div>
+            <div id="trafficOverview-body"></div>
+        </div>
+        <div id="map">
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXNnbuLMu7FX036ObpXDn_69YC9sqUH_I&callback=app.initMap"></script>
+    <script src="~/Scripts/src/app.js"></script>
+
+</body>
+</html>
