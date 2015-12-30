@@ -5,3 +5,5 @@
 Web.config
 App.config
 _bin*
+.vs
+FlowMVC
