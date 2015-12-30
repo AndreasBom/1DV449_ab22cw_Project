@@ -1,38 +1,22 @@
 ﻿@model Flow.Models.ExternalLoginConfirmationViewModel
 @{
-    ViewBag.Title = "Registrering";
+    ViewBag.Title = "Ej behörig!";
 }
 <div class="wraper-layer">
-    <div class="registration-layer">
-        
-
-
-        @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-        {
-            @Html.AntiForgeryToken()
-
-
-
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <p class="text-info">
-                Du loggades in med <strong>@ViewBag.LoginProvider</strong>.
-                Vänligen skriv in ett användarnamn och tryck 'Skicka' för att slutföra registreringen.
-            </p>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Email, "Namn:", new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="">
-                    <input type="submit" class="btn btn-default" value="Skicka" />
-                </div>
-            </div>
-        }
+    <div class="alert-danger">
+        <h3 class="alert-danger text-center">Obehörig emailadress!</h3>
+        <p class="text-center">Du loggade in med en obehörig emailadress.</p>
+        @Html.ActionLink("Tillbaka", "Login", "Account")
     </div>
 </div>
+
+<style>
+    .wraper-layer {
+        width: 400px;
+        margin: 100px auto;
+    }
+
+</style>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

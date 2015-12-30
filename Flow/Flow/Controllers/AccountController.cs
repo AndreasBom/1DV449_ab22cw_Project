@@ -164,8 +164,8 @@ namespace Flow.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "Home");
+                    
+                    return RedirectToAction("Index", "Admin");
                 }
                 AddErrors(result);
             }
@@ -359,7 +359,7 @@ namespace Flow.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Manage");
+                return RedirectToAction("Index", "Admin");
             }
 
             if (ModelState.IsValid)
@@ -395,7 +395,7 @@ namespace Flow.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "App");
         }
 
         //
@@ -446,13 +446,21 @@ namespace Flow.Controllers
             }
         }
 
+        //If return url is null something is wronggggg
         private ActionResult RedirectToLocal(string returnUrl)
         {
+            if (User.Identity.IsAuthenticated == false &&
+                User.IsInRole("admin") == false)
+            {
+                TempData["notAuthorized"] = "Emailaddressen är inte behörig!";
+            }
+
             if (Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            
+            return RedirectToAction("Index", "Admin");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

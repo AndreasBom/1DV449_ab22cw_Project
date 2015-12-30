@@ -15,3 +15,23 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.login-layer {
+    margin: 50px auto;
+    width: 400px;
+    float: none;
+    border: 3px solid #73AD21;
+    padding: 10px 40px 10px 40px;
+    text-align: center;
+}
+
+.backbtn {
+    text-align: left;
+    opacity: 0.5;
+}
+
+.backbtn:hover {
+    text-align: left;
+    opacity: 1;
+}
+

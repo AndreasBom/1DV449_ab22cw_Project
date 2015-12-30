@@ -3,13 +3,13 @@
 
 <div class="wraper-layer">
     <div class="login-layer">
-        <h2>Logga in</h2>
+        <h2>Flow Administrering</h2>
         <h4>Använd Google för att logga in.</h4>
 
         @{
             var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
 
-            using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl }))
+            using (Html.BeginForm("ExternalLogin", "Account", new {ReturnUrl = Model.ReturnUrl}))
             {
                 @Html.AntiForgeryToken()
                 <div id="socialLoginList">
@@ -21,7 +21,10 @@
                     </p>
                 </div>
             }
-
         }
+        <div class="backbtn">
+            @Html.ActionLink("Tillbaka", "Index", "App", null, new {@class="backlink"})
+        </div>
     </div>
+    
 </div>
