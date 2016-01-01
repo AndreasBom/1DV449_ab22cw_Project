@@ -17,16 +17,11 @@
 </head>
 <body>
     <div class="page_wrapper">
-        @*<div id="menu-layer">
-            <div id="overview-title">Meny <span id="toggle-menu" class="glyphicon glyphicon glyphicon-minus" style="float: right; margin-right: 5px;"></span></div>
-            <div id="overview"></div>
-        </div>*@
         <div id="traffic-menu">
             <div id="trafficConditions-toggle" class="btn traffic-toggle-off">Trafikvarning</div>
             <div id="trafficFlow-toggle" class=" btn traffic-toggle-off">Trafikflöde</div>
             <div id="trafficOverview-toggle" class=" btn traffic-toggle-on">Översikt</div>
             @Html.ActionLink("Admin", "Login", "Account", null, new { @class = "btn adminBtn" })
-            @*<div id="adminBtn" class="btn">Admin</div>*@
         </div>
         <div id="trafficOverview" class="traffic-toggle-on">
             <div id="trafficOverview-title">Ingen data</div>

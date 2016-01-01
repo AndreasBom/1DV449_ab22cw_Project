@@ -41,8 +41,10 @@ app.getRoadConditionsOverview = function () {
             }
             //Render overview window
             app.OverviewWindow(app.roadConditionsOverview);
-            //Render markers
-            //app.setMarkers(app.roadConditionsOverview);
+
+            //Position map to chosen location
+            app.map.setCenter(new google.maps.LatLng(app.roadConditionsOverview[0].Lat, app.roadConditionsOverview[0].Lng));
+
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("Error while fetching data");
@@ -52,6 +54,9 @@ app.getRoadConditionsOverview = function () {
 }
 
 app.getRoadConditions = function () {
+    //Inform user that data is loading
+    $("#trafficConditions-toggle").html("Hämtar...");
+
     $.ajax({
         type: "GET",
         url: "https://localhost:44300/api/message/getroadconditions",
@@ -62,8 +67,12 @@ app.getRoadConditions = function () {
                 app.addObjToArray(data, app.roadConditions);
             }
 
+            //Data is loaded, show button text
+            $("#trafficConditions-toggle").html("Trafikvarning");
+
             //Render road lines
             app.addLine(app.roadConditions);
+            
 
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -75,28 +84,6 @@ app.getRoadConditions = function () {
 /************** Ajax end ***********************/
 
 /************** Layers and Views start ***********************/
-
-//   Markers not in use for the moment
-//app.setMarkers = function (arrayWithObjects) {
-//    console.log("setMarkers");
-//    var marker;
-//    var infowindow = new google.maps.InfoWindow;
-
-//    for (var i = 0; i < arrayWithObjects.length; i++) {
-//        marker = new google.maps.Marker({
-//            position: new google.maps.LatLng(arrayWithObjects[i].Lat, arrayWithObjects[i].Lng),
-//            map: app.map
-//        });
-
-//        //Event Listener for markers
-//        google.maps.event.addListener(marker, 'click', (function (marker, i) {
-//            return function () {
-//                infowindow.setContent("<h3>" + arrayWithObjects[i].Text + "</h3>");
-//                infowindow.open(app.map, marker);
-//            }
-//        })(marker, i));
-//    }
-//}
 
 //Overview window
 app.OverviewWindow = function (arrayWithObjects) {
@@ -113,8 +100,10 @@ app.addLine = function (arrayWithObjects) {
 
     app.roadLines = [];
     for (var i = 0; i < arrayWithObjects.length; i++) {
+        
         if (arrayWithObjects[i].Cause != null) {
             var lineString = app.formatLineString(arrayWithObjects[i].WGS84);
+            
             var line = new google.maps.Polyline({
                 strokeColor: '#ff0000',
                 strokeOpacity: 1.0,
@@ -128,11 +117,20 @@ app.addLine = function (arrayWithObjects) {
             //Event Listener for lines
             google.maps.event.addListener(line, 'click', (function (line, i) {
                 return function (e) {
-                    infowindow.setContent("<h4>Orsak: " + arrayWithObjects[i].Cause + "</h4>" +
-                        "<p>RoadNumber: " + arrayWithObjects[i].RoadNumber + "</p>" +
-                        "<p>ConditionText: " + arrayWithObjects[i].ConditionText + "</p>" +
-                        "<p>LocationText: " + arrayWithObjects[i].LocationText + "</p>" +
-                        "<p>Measurement: " + arrayWithObjects[i].Measurement + "</p>");
+                    var measurement;
+                    if (arrayWithObjects[i].Measurement != null) {
+                        measurement = "<p>Åtgärd: " + arrayWithObjects[i].Measurement + "</p>";
+                    } else {
+                        measurement = "";
+                    }
+
+                    infowindow.setContent("<h4>Trafikvarning</h4>" +
+                        "<p>Orsak: " + arrayWithObjects[i].Cause + "</p>" +
+                        "<p>Vägnummer: " + arrayWithObjects[i].RoadNumber + "</p>" +
+                        "<p>Plats: " + arrayWithObjects[i].LocationText + "</p>" +
+                        "<p>Allvarlighetsgrad: " + arrayWithObjects[i].ConditionText + "</p>" +
+                        measurement
+                    );
                     infowindow.setPosition(e.latLng);
                     infowindow.open(app.map);
                 }
@@ -159,6 +157,8 @@ $("#trafficConditions-toggle").on('click', function() {
         var visible = app.roadLines[i].getVisible();
         app.roadLines[i].setVisible(!visible);
     }
+
+    
 });
 
 //Toggle road flow

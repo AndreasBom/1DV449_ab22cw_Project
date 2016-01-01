@@ -1,19 +1,60 @@
 ﻿
+@using Microsoft.AspNet.Identity
 @{
     Layout = null;
-    ViewBag.Title = "Administrering";
+    ViewBag.Title = "Admin";
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-<div>
-    <h2>Flow administrering</h2>
-</div>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                
+                <h3 id="admin-header">Administration</h3>
+            </div>
+            @*<div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>*@
+
+            @*Log out*@
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="logoff">
+                    <a href="javascript:document.getElementById('logoutForm').submit()" class="logoff-link">Log off</a>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="container body-content">
+
+        @Html.Partial("_adminPartial")
+        <hr />
+        <footer>
+            <p class="text-center" style="color: lightgray;">&copy; @DateTime.Now.Year - Flow, Developed by Andreas Bom</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+<script>
+    $("#close").on('click', function () {
+        $(".alert-success").hide(500);
+    });
+</script>
+
 </body>
 </html>
