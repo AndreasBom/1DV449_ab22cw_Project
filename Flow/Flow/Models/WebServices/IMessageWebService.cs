@@ -10,7 +10,7 @@ namespace Flow.Models.WebServices
 {
     public interface IMessageWebService
     {
-        JObject FetchJsonData(string requestString);
+        JObject FetchJsonData(string requestString, string cachname);
 
     }
 }

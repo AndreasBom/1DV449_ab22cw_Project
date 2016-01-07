@@ -11,19 +11,23 @@ using Microsoft.AspNet.Identity;
 namespace Flow.Controllers
 {
     
+    [RequireHttps]
     public class AdminController : Controller
     {
         private AdminChangeViewModel model = new AdminChangeViewModel();
         
-        // GET: Admin. Requires user to log in. ab22cw@gmail.com is registered as admin
-        [RequireHttps]
-        [Authorize(Roles = "admin")]
+        // GET: Admin. Requires user to log in with ab22cw@gmail.com
+
+        //[Authorize(Roles = "admin")]
         public ActionResult Index()
         {
             return View(model);
         }
 
+        
+
         [HttpPost]
+        [RequireHttps]
         public ActionResult Save(FormCollection collection)
         {
             //Saves new county to xml-file and saves a confirmaton message

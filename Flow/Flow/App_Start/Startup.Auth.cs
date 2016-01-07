@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Web.Helpers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
@@ -41,6 +43,8 @@ namespace Flow
                 }
             });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+            //AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.Email;
+
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
             app.UseTwoFactorSignInCookie(DefaultAuthenticationTypes.TwoFactorCookie, TimeSpan.FromMinutes(5));
@@ -68,6 +72,7 @@ namespace Flow
                 ClientId = System.Web.Configuration.WebConfigurationManager.AppSettings["ClientId"],
                 ClientSecret = System.Web.Configuration.WebConfigurationManager.AppSettings["ClientSecret"]
             });
+
         }
     }
 

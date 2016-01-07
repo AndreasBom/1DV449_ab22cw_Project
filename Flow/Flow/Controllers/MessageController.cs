@@ -11,6 +11,8 @@ using Flow.Models.WebServices;
 namespace Flow.Controllers
 {
     
+    [RequireHttps]
+    
     public class MessageController : ApiController
     {
         //public IEnumerable<RoadConditionOverview> GetAllRoadConditions()
@@ -21,6 +23,7 @@ namespace Flow.Controllers
         //    return result;
         //}
 
+        [RequireHttps]
         public IHttpActionResult GetRoadConditionsOverview()
         {
             var webClient = new MessageWebService();
@@ -34,6 +37,7 @@ namespace Flow.Controllers
             return Ok(result);
         }
 
+        [RequireHttps]
         public IHttpActionResult GetRoadConditions()
         {
             var webClient = new MessageWebService();

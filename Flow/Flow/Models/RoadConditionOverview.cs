@@ -12,7 +12,7 @@ namespace Flow.Models
     public class RoadConditionOverview
     {
         public int CountyNo { get; set; }
-        public DateTime EndTime { get; set; }
+        //public DateTime EndTime { get; set; }
         public string SWEREF99TM { get; set; }
         public string WGS84 { get; set; }
 
@@ -39,8 +39,8 @@ namespace Flow.Models
         }
         public string Id { get; set; } 
         public string LocationText { get; set; }
-        public DateTime ModifiedTime { get; set; }
-        public DateTime StartTime { get; set; }
+        public string ModifiedTime { get; set; }
+        //public DateTime StartTime { get; set; }
         public string Text { get; set; }
         //public bool ValidUntilFurtherNotice { get; set; }
 
@@ -49,10 +49,10 @@ namespace Flow.Models
         {
             Id = item.Value<string>("Id");
             CountyNo = (int)item["CountyNo"][0];
-            StartTime = DateTime.ParseExact(item["StartTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null);
-            EndTime = DateTime.ParseExact(item["EndTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null);
+            //StartTime = DateTime.ParseExact(item["StartTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null);
+            //EndTime = DateTime.ParseExact(item["EndTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null);
             LocationText = Util.Encode.EncodeToSwe(item.Value<string>("LocationText"));
-            ModifiedTime = DateTime.ParseExact(item["ModifiedTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null);
+            //ModifiedTime = DateTime.ParseExact(item["ModifiedTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null).ToString("yyyy-MM-dd HH:mm:ss");
             Text = Util.Encode.EncodeToSwe(item.Value<string>("Text"));
             WGS84 = (string) item["Geometry"]["WGS84"];
         }

@@ -24,23 +24,25 @@ namespace Flow.Models.WebServices
             //Reading config.xml for default location
             var path = HttpContext.Current.Request.MapPath("~/App_Data/XML/config.xml");
             XDocument doc = XDocument.Load(path);
-            
+
             _countyNo = (int)(from c in doc.Descendants("county")
-                                       select c).FirstOrDefault();
+                              select c).FirstOrDefault();
         }
 
         public IEnumerable<Icon> GetIcons()
         {
             string request = "<REQUEST> " +
-                   "<LOGIN authenticationkey = '" + Authenticationkey + "' />" +
-                   "<QUERY objecttype='Icon'>" +
-                   "<FILTER>" +
-                   "<EQ name = 'CountyNo' value='" + _countyNo + "' />" +
-                   "</FILTER>" +
-                   "</QUERY>" +
-                   "</REQUEST>";
+               "<LOGIN authenticationkey = '" + Authenticationkey + "' />" +
+               "<QUERY objecttype='Icon'>" +
+               "<FILTER>" +
+               "<EQ name = 'CountyNo' value='" + _countyNo + "' />" +
+               "</FILTER>" +
+               "</QUERY>" +
+               "</REQUEST>";
 
-            var json = FetchJsonData(request);
+            var json = FetchJsonData(request, "GetIcons");
+
+
             var result = (from item in json["RESPONSE"]["RESULT"][0]["Icon"]
                           select new Icon(item)).ToList();
             return result;
@@ -69,7 +71,7 @@ namespace Flow.Models.WebServices
                    "</FILTER>" +
                    "</QUERY>" +
                    "</REQUEST>";
-            var json = FetchJsonData(request);
+            var json = FetchJsonData(request, "GetRoadConditions");
 
             var result = (from item in json["RESPONSE"]["RESULT"][0]["RoadCondition"]
                           select new RoadCondition(item)).ToList();
@@ -95,7 +97,7 @@ namespace Flow.Models.WebServices
             return result;
         }
 
-        
+
 
         public IEnumerable<RoadConditionOverview> GetRoadConditionOverviews()
         {
@@ -107,7 +109,7 @@ namespace Flow.Models.WebServices
                    "</FILTER>" +
                    "</QUERY>" +
                    "</REQUEST>";
-            var json = FetchJsonData(request);
+            var json = FetchJsonData(request, "RoadConditionsOverview");
 
             var result = (from item in json["RESPONSE"]["RESULT"][0]["RoadConditionOverview"]
                           select new RoadConditionOverview(item)).ToList();
