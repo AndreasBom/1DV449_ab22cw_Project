@@ -58,7 +58,7 @@ namespace Flow.Models.WebServices
 
 
         //Remove object from cache 
-        public void RemoveCache(string keyName)
+        public static void RemoveCache(string keyName)
         {
             try
             {

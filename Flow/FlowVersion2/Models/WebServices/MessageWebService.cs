@@ -18,15 +18,29 @@ namespace Flow.Models.WebServices
     public class MessageWebService : MessageWebServiceBase
     {
         private int _countyNo;
+        private static string CacheNameOverView => "RoadConditionsOverview";
+        private static string CacheNameRoadConditions => "RoadConditions";
 
-        public MessageWebService()
+        public static void ClearCache()
         {
-            //Reading config.xml for default location
-            var path = HttpContext.Current.Request.MapPath("~/App_Data/XML/config.xml");
-            XDocument doc = XDocument.Load(path);
+            CachedData.RemoveCache(CacheNameOverView);
+            CachedData.RemoveCache(CacheNameRoadConditions);
+        }
 
-            _countyNo = (int)(from c in doc.Descendants("county")
-                              select c).FirstOrDefault();
+        public MessageWebService(int countyNo)
+        {
+            _countyNo = countyNo;
+            //Reading config.xml for default location
+            //var path = HttpContext.Current.Request.MapPath("~/App_Data/XML/config.xml");
+            //XDocument doc = XDocument.Load(path);
+
+            //_countyNo = (int)(from c in doc.Descendants("county")
+            //                  select c).FirstOrDefault();
+        }
+
+        public void GetUserLocation()
+        {
+            
         }
 
         public IEnumerable<Icon> GetIcons()
@@ -71,7 +85,7 @@ namespace Flow.Models.WebServices
                    "</FILTER>" +
                    "</QUERY>" +
                    "</REQUEST>";
-            var json = FetchJsonData(request, "GetRoadConditions");
+            var json = FetchJsonData(request, CacheNameRoadConditions);
 
             var result = (from item in json["RESPONSE"]["RESULT"][0]["RoadCondition"]
                           select new RoadCondition(item)).ToList();
@@ -109,7 +123,7 @@ namespace Flow.Models.WebServices
                    "</FILTER>" +
                    "</QUERY>" +
                    "</REQUEST>";
-            var json = FetchJsonData(request, "RoadConditionsOverview");
+            var json = FetchJsonData(request, CacheNameOverView);
 
             var result = (from item in json["RESPONSE"]["RESULT"][0]["RoadConditionOverview"]
                           select new RoadConditionOverview(item)).ToList();

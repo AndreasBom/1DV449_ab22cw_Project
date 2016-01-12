@@ -10,7 +10,7 @@
                 @foreach (var county in Model.GetCounties)
                 {
                     <option value="@county.Value"
-                            @if (county.Value == Model.SelectedCounty)
+                            @if (county.Value == Model.StartLocation)
                             {
                                 @: selected="selected"
                             }>

@@ -18,28 +18,28 @@ namespace Flow.Views.Admin
         private readonly string path = HttpContext.Current.Request.MapPath("~/App_Data/XML/config.xml");
 
         public IDictionary<string, int> GetCounties => counties;
-        
 
-        public int SelectedCounty
-        {
-            get
-            {
-                XDocument doc = XDocument.Load(path);
-                var selectedCounty = (int)(from c in doc.Descendants("county")
-                    select c).FirstOrDefault();
+        public int StartLocation { get; set; }
+        //public int SelectedCounty
+        //{
+        //    get
+        //    {
+        //        XDocument doc = XDocument.Load(path);
+        //        var selectedCounty = (int)(from c in doc.Descendants("county")
+        //            select c).FirstOrDefault();
 
-                return selectedCounty;
-            }
-            set
-            {
-                XDocument doc = XDocument.Load(path);
-                var selectedCounty = (from c in doc.Descendants("config")
-                                           select c).FirstOrDefault();
+        //        return selectedCounty;
+        //    }
+        //    set
+        //    {
+        //        XDocument doc = XDocument.Load(path);
+        //        var selectedCounty = (from c in doc.Descendants("config")
+        //                                   select c).FirstOrDefault();
 
-                selectedCounty.SetElementValue("county", value);
-                doc.Save(path);
-            }
-        }
+        //        selectedCounty.SetElementValue("county", value);
+        //        doc.Save(path);
+        //    }
+        //}
         
 
         private readonly Dictionary<string, int>  counties = new Dictionary<string, int>

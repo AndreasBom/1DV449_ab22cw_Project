@@ -11,7 +11,6 @@ namespace FlowVersion2.Controllers
         // GET: App
         public ActionResult Index()
         {
-
             return View();
         }
     }

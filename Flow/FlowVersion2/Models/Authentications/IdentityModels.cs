@@ -14,14 +14,20 @@ namespace FlowVersion2.Models
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
+            // Add custom user claims here
+            //userIdentity.AddClaim(new Claim("DefaultLocation", DefaultLocation));
+            //userIdentity.AddClaim(new Claim("StartLocation", DefaultLocation));
             return userIdentity;
         }
+
+        public string DefaultLocation { get; set; }
+        public int StartLocation { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("FlowDb", throwIfV1Schema: false)
         {
         }
 
