@@ -1,0 +1,53 @@
+﻿
+@using Microsoft.AspNet.Identity
+@{
+    Layout = null;
+    ViewBag.Title = "Admin";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                
+                <h3 id="admin-header">Administration</h3>
+            </div>
+
+            
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="logoff">
+                    <a href="javascript:document.getElementById('logoutForm').submit();" class="logoff-link">Logga ut</a>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="container body-content">
+
+        @Html.Partial("_adminPartial")
+        <hr />
+        <footer>
+            <p class="text-center" style="color: lightgray;">&copy; @DateTime.Now.Year - Flow, Developed by Andreas Bom</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+<script>
+
+    
+
+</script>
+
+</body>
+</html>

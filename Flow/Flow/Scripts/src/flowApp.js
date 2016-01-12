@@ -10,9 +10,6 @@ app.roadLines = [];
 /************ INIT APP *****************************/
 //Initialize map
 app.initApp = function () {
-    app.trafficLayer = new google.maps.TrafficLayer();
-    app.getRoadConditionsOverview();
-    app.getRoadConditions();
     console.log("app.initMap was successful");
 };
 /********************************************************
@@ -20,23 +17,7 @@ app.initApp = function () {
 
 /************** functions start ***********************/
 app.getRoadConditionsOverview = function () {
-    var fetchedData = {};
-
-    //If there is no data i local storage, data will be fetched from web
-    if (localStorage.getItem("OverviewOldFetch") === null) {
-        try {
-            fetchedData = app.roadConditionsOverviewAsync();
-            console.log("localStorage is empty. Fetching from web");
-        } catch (err) {
-            console.log(err);
-        }
-        //If there is data in local storage
-    } else {
-        fetchedData = localStorage.getItem("OverviewNewFetch");
-        console.log("Fetching from local storage");
-    }
-    var data = JSON.parse(fetchedData);
-
+    var data = JSON.parse(localStorage.getItem("Overview"));
     //Add data to array
     for (var i = 0; i < data.length; i++) {
         app.addObjToArray(data, app.roadConditionsOverview);
@@ -45,43 +26,37 @@ app.getRoadConditionsOverview = function () {
     //Render overview window
     app.OverviewWindow(app.roadConditionsOverview);
 
-    //Position map to chosen location
-    map.setCenter(new google.maps.LatLng(app.roadConditionsOverview[0].Lat, app.roadConditionsOverview[0].Lng));
+    //INGEN ANING OM VARFÖR PUNKTEN I DECIMALTALEN LAT och LNG FÖRSVINNER NÄR DEN LANDAR PÅ KLIENTEN
+    // (lokalt funkar det men inte på remote server. ex 14.23344 blir 1423344). Så nedan följer en nödlösning.
+    var lat = app.roadConditionsOverview[0].Lat;
+    var lng = app.roadConditionsOverview[0].Lng;
+    var digits;
+    var divider;
+    if (lat % 1 === 0) {
+        digits = (lat.toString().length) - 2;
+        divider = Math.pow(10, parseInt(digits));
+        lat = lat / divider;
+    }
+    if (lng % 1 === 0) {
+        digits = (lng.toString().length) - 2;
+        divider = Math.pow(10, parseInt(digits));
+        lng = lng / divider;
+    }
+    
+    //Position map to choosen location
+    map.setCenter(new google.maps.LatLng(lat, lng));
+
 };
 
 //RoadConditions
 app.getRoadConditions = function () {
-    //Inform user that data is loading
-    $("#trafficConditions-toggle").html("Hämtar...");
-
-    //For testing. Gives the right url to data
-
-    var fetchedData = {};
-
-    //If there is no data i local storage, data will be fetched from web
-    if (localStorage.getItem("RoadConditionsOldFetch") === null) {
-        try {
-            fetchedData = app.roadConditionsAsync();
-            console.log("localStorage is empty. Fetching from web (app.getRoadConditions)");
-        } catch (err) {
-            console.log(err);
-            return;
-        }
-        //If there is data in local storage
-    } else {
-        fetchedData = localStorage.getItem("RoadConditionsNewFetch");
-        console.log("Fetching from local storage");
-    }
-
-    var data = JSON.parse(fetchedData);
+    var data = JSON.parse(localStorage.getItem("RoadConditions"));
 
     //Add data to array
     for (var i = 0; i < data.length; i++) {
+
         app.addObjToArray(data, app.roadConditions);
     }
-
-    //Data is loaded, show button text
-    $("#trafficConditions-toggle").html("Trafikvarning");
 
     //Render road lines
     app.addLine(app.roadConditions);
@@ -93,9 +68,10 @@ app.getRoadConditions = function () {
 
 //Overview window
 app.OverviewWindow = function (arrayWithObjects) {
+    
+
     $("#trafficOverview-title").html("<h5>" + arrayWithObjects[0].LocationText + "</h5>");
     $("#trafficOverview-body").html("<p>" + arrayWithObjects[0].Text + "</p>");
-
 }
 
 //Road Lines
@@ -144,7 +120,6 @@ app.addLine = function (arrayWithObjects) {
             app.roadLines.push(line);
         }
     }
-    console.log("Number of warnings: " + app.roadLines.length);
 };
 /************** Layers and Views end ***********************/
 
@@ -162,34 +137,23 @@ $("#trafficConditions-toggle").on('click', function () {
     for (var i = 0; i < app.roadLines.length; i++) {
         var visible = app.roadLines[i].getVisible();
         app.roadLines[i].setVisible(!visible);
-        console.log("trafficConditions event was pressed");
     }
-
-
 });
 
 //Toggle road flow
 $("#trafficFlow-toggle").on('click', function () {
-    console.log("Toggle RoadFlow");
     $(this).toggleClass("traffic-toggle-off traffic-toggle-on");
     if (app.trafficLayer.getMap() == null) {
         app.trafficLayer.setMap(map);
-        console.log("Getmap true");
+        
     } else {
         app.trafficLayer.setMap(null);
-        console.log("Getmap false");
     }
 });
 
-//$("#toggle-menu").on('click', function() {
-//    $("#overview").slideToggle(1);
-//    $(this).toggleClass("glyphicon glyphicon-minus glyphicon glyphicon-plus");
-//});
 /************** Events end ***********************/
 
 /***************** Util ***********************/
-
-
 
 //Add json objects to array
 app.addObjToArray = function (jsonData, array) {
@@ -200,15 +164,18 @@ app.addObjToArray = function (jsonData, array) {
 
 
 //Formatting a string with coordinates to google.maps.LatLng
+//Original format == LINESTRING(12.345 56.2345, 11.2345 56.6543 ......)
+//Output == Array with [google.maps.latlng]
 app.formatLineString = function (lineString) {
-
+    //Remove all but decimal numbers
     var regex = /\(([^()]+)\)/g;
     var cleanData = regex.exec(lineString)[1];
-
+    
+    //put each road in a seperate location in an array
     var pointsData = cleanData.split(",");
-
     var coordArray = [];
 
+    //for each road, split all the lat lng points into a location in an array
     var len = pointsData.length;
     for (var i = 0; i < len; i++) {
         var xy = pointsData[i].split(" ");
@@ -220,8 +187,10 @@ app.formatLineString = function (lineString) {
         var pt = new google.maps.LatLng(xy[1], xy[0]);
         coordArray.push(pt);
     }
-
+    
     return coordArray;
 }
+
+
 
 

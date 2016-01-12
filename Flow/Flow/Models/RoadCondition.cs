@@ -19,7 +19,7 @@ namespace Flow.Models
         public string IconId { get; set; }
         public string Id { get; set; }
         public string LocationText { get; set; }
-        public DateTime? ModifiedTime { get; set; }
+        public DateTime ModifiedTime { get; set; }
         public string RoadNumber { get; set; }
         public int? RoadNumberNumric { get; set; }
         public DateTime? StartTime { get; set; }
@@ -62,6 +62,7 @@ namespace Flow.Models
             Creator = Util.Encode.EncodeToSwe(item.Value<string>("Creator"));
             IconId = Util.Encode.EncodeToSwe(item.Value<string>("IconId"));
             LocationText = Util.Encode.EncodeToSwe(item.Value<string>("LocationText"));
+            //ModifiedTime = DateTime.ParseExact(item["ModifiedTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null).ToString("yyyy-MM-dd HH:mm:ss");
             ModifiedTime = item.Value<DateTime>("ModifiedTime");
             RoadNumber = Util.Encode.EncodeToSwe(item.Value<string>("RoadNumber"));
             RoadNumberNumric = item.Value<int>("RoadNumberNumeric");

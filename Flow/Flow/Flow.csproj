@@ -231,16 +231,20 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\TrafficMessagesController.cs" />
+    <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Authentications\AccountBindingModels.cs" />
     <Compile Include="Models\Authentications\AccountViewModels.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\Icon.cs" />
     <Compile Include="Models\Authentications\IdentityModels.cs" />
     <Compile Include="Models\Authentications\ManageViewModels.cs" />
-    <Compile Include="Models\Icon.cs" />
     <Compile Include="Models\RoadCondition.cs" />
     <Compile Include="Models\RoadConditionOverview.cs" />
     <Compile Include="Models\Situation.cs" />
@@ -261,7 +265,9 @@
       <DependentUpon>aspnet-Flow-20151218102839.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\DefaultMapLocation.json" />
-    <Content Include="App_Data\XML\config.xml" />
+    <Content Include="App_Data\XML\config.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -294,6 +300,7 @@
     <Content Include="Scripts\src\dataFetcher.js" />
     <Content Include="Scripts\src\flowApp.js" />
     <Content Include="offline\offline.js" />
+    <Content Include="Scripts\src\flowUtil.js" />
     <Content Include="Scripts\src\initMap.js" />
     <Content Include="upup.min.js" />
     <Content Include="upup.sw.min.js" />
@@ -317,6 +324,27 @@
     <None Include="Properties\PublishProfiles\Flow.pubxml" />
     <None Include="Properties\PublishProfiles\TrafficFlow.pubxml" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\Edit.cshtml" />
+    <Content Include="Views\UsersAdmin\Details.cshtml" />
+    <Content Include="Views\UsersAdmin\Delete.cshtml" />
+    <Content Include="Views\UsersAdmin\Create.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\RolesAdmin\Index.cshtml" />
+    <Content Include="Views\RolesAdmin\Edit.cshtml" />
+    <Content Include="Views\RolesAdmin\Details.cshtml" />
+    <Content Include="Views\RolesAdmin\Delete.cshtml" />
+    <Content Include="Views\RolesAdmin\Create.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Account\DisplayEmail.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

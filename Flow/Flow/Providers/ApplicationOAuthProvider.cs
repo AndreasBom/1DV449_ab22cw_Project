@@ -9,7 +9,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using Flow.Models;
+using IdentitySample.Models;
+using ApplicationUser = Flow.Models.Authentications.ApplicationUser;
 
 namespace Flow.Providers
 {

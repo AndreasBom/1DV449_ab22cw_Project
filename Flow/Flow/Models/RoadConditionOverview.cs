@@ -16,30 +16,30 @@ namespace Flow.Models
         public string SWEREF99TM { get; set; }
         public string WGS84 { get; set; }
 
-        public float Lng
+        public double Lng
         {
             get
             {
                 string number = Regex.Match(WGS84, @"\d+.\d+ \d+.\d+").Value;
                 string numParsed = number.Replace(".", ",");
                 var lat = numParsed.Split(null);
-                return float.Parse(lat[0]);
+                return double.Parse(lat[0]);
             }
         }
 
-        public float Lat
+        public double Lat
         {
             get
             {
                 string number = Regex.Match(WGS84, @"\d+.\d+ \d+.\d+").Value;
                 string numParsed = number.Replace(".", ",");
                 var lng = numParsed.Split(null);
-                return float.Parse(lng[1]);
+                return double.Parse(lng[1]);
             }
         }
         public string Id { get; set; } 
         public string LocationText { get; set; }
-        public string ModifiedTime { get; set; }
+        public DateTime ModifiedTime { get; set; }
         //public DateTime StartTime { get; set; }
         public string Text { get; set; }
         //public bool ValidUntilFurtherNotice { get; set; }
@@ -52,7 +52,8 @@ namespace Flow.Models
             //StartTime = DateTime.ParseExact(item["StartTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null);
             //EndTime = DateTime.ParseExact(item["EndTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null);
             LocationText = Util.Encode.EncodeToSwe(item.Value<string>("LocationText"));
-            //ModifiedTime = DateTime.ParseExact(item["ModifiedTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null).ToString("yyyy-MM-dd HH:mm:ss");
+            //ModifiedTime = DateTime.ParseExact(item["ModifiedTime"].ToString(), "yyyy-MM-dd HH:mm:ss", null).ToString("yyyy-MM-dd HH:mm:ss");            
+            ModifiedTime = (DateTime) item.Value<DateTime>("ModifiedTime");           
             Text = Util.Encode.EncodeToSwe(item.Value<string>("Text"));
             WGS84 = (string) item["Geometry"]["WGS84"];
         }

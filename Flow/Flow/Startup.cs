@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Owin;
-using Owin;
+﻿using Owin;
 
-[assembly: OwinStartup(typeof(Flow.Startup))]
-
-namespace Flow
+namespace Flow.Models.Authentications
 {
     public partial class Startup
     {

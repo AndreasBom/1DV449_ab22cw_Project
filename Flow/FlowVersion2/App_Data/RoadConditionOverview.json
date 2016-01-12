@@ -1,0 +1,326 @@
+﻿{
+  "RESPONSE": {
+    "RESULT": [
+      {
+        "RoadConditionOverview": [
+          {
+            "CountyNo": [
+              12
+            ],
+            "EndTime": "2015-12-25T13:44:13",
+            "Geometry": {
+              "SWEREF99TM": "POINT (413443.34 6194499.98)",
+              "WGS84": "POINT (13.6161013 55.88818)"
+            },
+            "Id": "SE_STA_TRISSID_1_1145888",
+            "LocationText": "SkÃ¥ne lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:44:58.378Z",
+            "StartTime": "2015-12-25T09:44:13",
+            "Text": "Ã–versikt:\nVÃ¥ta och fuktiga vÃ¤gar med plusgrader i vÃ¤gytan. \n\nPrognos:\nIngen fÃ¶rvÃ¤ntad fÃ¶rÃ¤ndring av vÃ¤glaget.\n\nÃ–vrigt:\nVÃ¤glaget kan fÃ¶rÃ¤ndras snabbt. UppmÃ¤rksamma halkkÃ¤nsliga omrÃ¥den som vattendrag, skuggpartier, sÃ¤nkor och bergskÃ¤rningar. \nFÃ¶r ytterligare information om vÃ¤glaget se www.trafikverket.se alt. www.trafiken.nu\n\n"
+          },
+          {
+            "CountyNo": [
+              25
+            ],
+            "EndTime": "2015-12-25T13:00:23",
+            "Geometry": {
+              "SWEREF99TM": "POINT (780770.98 7417839.81)",
+              "WGS84": "POINT (21.38291 66.74946)"
+            },
+            "Id": "SE_STA_TRISSID_1_1653361",
+            "LocationText": "Norrbottens lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:00:52.33Z",
+            "StartTime": "2015-12-25T09:00:23",
+            "Text": "Ã–versikt:\nVÃ¤glaget i lÃ¤net bestÃ¥r Ã¶vervÃ¤gande av vintervÃ¤glag i form av lÃ¶s eller packad snÃ¶ och isiga vÃ¤gbanor, nÃ¤rmast kusten modd och vÃ¥ta vÃ¤gar.\n\nPrognos:\nUnder dagen finns risk fÃ¶r lokal ishalka i lÃ¤nets Ã¶stra delar i samband med regn pÃ¥ kalla vÃ¤gbanor. Ã„ven risk fÃ¶r lokal snÃ¶halka i fjÃ¤llen och i inlandet under dagen.\n\nFÃ¤rja/IsvÃ¤g:\nAvanleden Ã¤r gÃ¥r enligt tidtabell.\nRÃ¶duppleden FÃ¤rjan Ã¤r instÃ¤lld. Ingen isvÃ¤g i nulÃ¤get.\nBohedenleden gÃ¥r enligt tidtabell.\n\nFjÃ¤llvÃ¤gar:\nE10 BjÃ¶rkliden - RiksgrÃ¤nsen Ã¤r Ã–PPEN. \nRv95 MerkenÃ¤s - RiksgrÃ¤ns Ã¤r Ã–PPEN.\n\nÃ–vrigt:\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se"
+          },
+          {
+            "CountyNo": [
+              24
+            ],
+            "EndTime": "2015-12-25T13:09:23",
+            "Geometry": {
+              "SWEREF99TM": "POINT (686516.6 7205151.02)",
+              "WGS84": "POINT (18.94519 64.9181442)"
+            },
+            "Id": "SE_STA_TRISSID_1_1812914",
+            "LocationText": "VÃ¤sterbottens lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:09:42.244Z",
+            "StartTime": "2015-12-25T09:09:23",
+            "Text": "Ã–versikt:\nVÃ¤glaget i lÃ¤net bestÃ¥r Ã¶vervÃ¤gande av vintervÃ¤glag i form av packad snÃ¶ och isiga vÃ¤gbanor, nÃ¤rmast kusten flÃ¤ckvis isiga och vÃ¥ta vÃ¤gbanor.\n\nPrognos:\nUnder dagen finns risk fÃ¶r lokal ishalka i lÃ¤nets mellersta delar i samband med regn pÃ¥ kalla vÃ¤gbanor. Ã„ven risk fÃ¶r lokal snÃ¶halka i fjÃ¤llen under dagen.\n\nFjÃ¤llvÃ¤gar:\nE12 Hemavan - RiksgrÃ¤nsen Ã¤r Ã–PPEN. \nVÃ¤g 1067 (StekenjokkvÃ¤gen) KlimpfjÃ¤ll - Leipikvattnet Ã¤r vinterstÃ¤ngd mellan perioden 15/10 och 6/6.\n\nFÃ¤rja:\nHolmÃ¶leden gÃ¥r enligt tidtabell.\n\nÃ–vrigt:\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se"
+          },
+          {
+            "CountyNo": [
+              4
+            ],
+            "EndTime": "2015-12-25T13:25:18",
+            "Geometry": {
+              "SWEREF99TM": "POINT (584521.31 6563323.08)",
+              "WGS84": "POINT (16.4798489 59.2005653)"
+            },
+            "Id": "SE_STA_TRISSID_1_307603",
+            "LocationText": "SÃ¶dermanlands lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:26:01.651Z",
+            "StartTime": "2015-12-25T09:25:18",
+            "Text": "Ã–versikt:\nFuktiga vÃ¤gar med plusgrader i vÃ¤gytorna.\n\nPrognos:\nInga fÃ¶rÃ¤ndringar med vÃ¤glaget vÃ¤ntas under dagen. Lokalt kan hÃ¥rda vindbyar fÃ¶rekomma\n\nÃ–vrigt: \n\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n"
+          },
+          {
+            "CountyNo": [
+              18
+            ],
+            "EndTime": "2015-12-25T13:09:17",
+            "Geometry": {
+              "SWEREF99TM": "POINT (484872.64 6588551.77)",
+              "WGS84": "POINT (14.7333231 59.4352722)"
+            },
+            "Id": "SE_STA_TRISSID_1_327503",
+            "LocationText": "Ã–rebro lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:09:42.463Z",
+            "StartTime": "2015-12-25T09:09:17",
+            "Text": "Ã–versikt:\nFuktiga vÃ¤gar med plusgrader i vÃ¤gytorna. HÃ¥rda vindar.\n\nPrognos:\nUnder dagen vÃ¤ntas fortsatt hÃ¥rda vindar samt nederbÃ¶rd i form av regn eller snÃ¶blandat. \n\nÃ–vrigt: \n\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n"
+          },
+          {
+            "CountyNo": [
+              19
+            ],
+            "EndTime": "2015-12-25T13:20:00",
+            "Geometry": {
+              "SWEREF99TM": "POINT (571429.14 6646186.15)",
+              "WGS84": "POINT (16.2786083 59.946888)"
+            },
+            "Id": "SE_STA_TRISSID_1_327523",
+            "LocationText": "VÃ¤stmanlands lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:20:40.913Z",
+            "StartTime": "2015-12-25T09:20:00",
+            "Text": "Ã–versikt:\nFuktiga vÃ¤gar med plusgrader i vÃ¤gytorna.\n\nPrognos:\nInga fÃ¶rÃ¤ndringar med vÃ¤glaget vÃ¤ntas under dagen. Lokalt finns det risk fÃ¶r hÃ¥rda vindar.\n\nÃ–vrigt: \n\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n"
+          },
+          {
+            "CountyNo": [
+              3
+            ],
+            "EndTime": "2015-12-25T13:25:00",
+            "Geometry": {
+              "SWEREF99TM": "POINT (655250.78 6650359.1)",
+              "WGS84": "POINT (17.78068 59.96126)"
+            },
+            "Id": "SE_STA_TRISSID_1_327723",
+            "LocationText": "Uppsala lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:25:23.538Z",
+            "StartTime": "2015-12-25T09:25:00",
+            "Text": "Ã–versikt:\nFuktiga vÃ¤gar med plusgrader i vÃ¤gytorna.\n\nPrognos:\nInga fÃ¶rÃ¤ndringar med vÃ¤glaget vÃ¤ntas under dagen. Lokalt kan hÃ¥rda vindbyar fÃ¶rekomma.\n\nÃ–vrigt: \n\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n"
+          },
+          {
+            "CountyNo": [
+              14
+            ],
+            "EndTime": "2015-12-25T12:19:12",
+            "Geometry": {
+              "SWEREF99TM": "POINT (343706.65 6439543.05)",
+              "WGS84": "POINT (12.3502855 58.0697441)"
+            },
+            "Id": "SE_STA_TRISSID_1_3635804",
+            "LocationText": "VÃ¤stra GÃ¶talands lÃ¤n",
+            "ModifiedTime": "2015-12-25T07:19:54.836Z",
+            "StartTime": "2015-12-25T08:19:12",
+            "Text": "Ã–versikt:\nMestadels vÃ¥ta eller fuktiga vÃ¤gbanor.\n\nPrognos:\nOfÃ¶rÃ¤ndrat vÃ¤glag.\n\nÃ–vrigt: FÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n\n\n"
+          },
+          {
+            "CountyNo": [
+              13
+            ],
+            "EndTime": "2015-12-25T12:18:56",
+            "Geometry": {
+              "SWEREF99TM": "POINT (366413.66 6313907.27)",
+              "WGS84": "POINT (12.8037291 56.9494667)"
+            },
+            "Id": "SE_STA_TRISSID_1_3705564",
+            "LocationText": "Hallands lÃ¤n",
+            "ModifiedTime": "2015-12-25T07:19:54.602Z",
+            "StartTime": "2015-12-25T08:18:56",
+            "Text": "Ã–versikt:\nMestadels vÃ¥ta eller fuktiga vÃ¤gbanor.\n\nPrognos:\nOfÃ¶rÃ¤ndrat vÃ¤glag.\n\nÃ–vrigt: FÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n\n\n"
+          },
+          {
+            "CountyNo": [
+              17
+            ],
+            "EndTime": "2015-12-25T12:19:05",
+            "Geometry": {
+              "SWEREF99TM": "POINT (404198.85 6637483.87)",
+              "WGS84": "POINT (13.2893448 59.8638344)"
+            },
+            "Id": "SE_STA_TRISSID_1_3828024",
+            "LocationText": "VÃ¤rmlands lÃ¤n",
+            "ModifiedTime": "2015-12-25T07:19:54.508Z",
+            "StartTime": "2015-12-25T08:19:05",
+            "Text": "Ã–versikt:\nMestadels vÃ¥ta eller fuktiga vÃ¤gbanor. \n\n\nPrognos:\nOfÃ¶rÃ¤ndrat vÃ¤glag.\n\nÃ–vrigt: \nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n\n\n"
+          },
+          {
+            "CountyNo": [
+              2,
+              1
+            ],
+            "EndTime": "2015-12-25T13:25:25",
+            "Geometry": {
+              "SWEREF99TM": "POINT (659697.96 6579828.3)",
+              "WGS84": "POINT (17.8068523 59.3269844)"
+            },
+            "Id": "SE_STA_TRISSID_1_406710",
+            "LocationText": "Stockholms lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:26:01.792Z",
+            "StartTime": "2015-12-25T09:25:25",
+            "Text": "Ã–versikt:\nFuktiga vÃ¤gar med plusgrader i vÃ¤gytorna.\n\nPrognos:\nInga fÃ¶rÃ¤ndringar med vÃ¤glaget vÃ¤ntas under dagen.  Lokalt kan hÃ¥rda vindbyar fÃ¶rekomma\n\nÃ–vrigt: \n\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se eller www.trafiken.nu\n"
+          },
+          {
+            "CountyNo": [
+              9
+            ],
+            "EndTime": "2015-12-25T13:25:37",
+            "Geometry": {
+              "SWEREF99TM": "POINT (708985.05 6381952.84)",
+              "WGS84": "POINT (18.4910469 57.5317345)"
+            },
+            "Id": "SE_STA_TRISSID_1_406730",
+            "LocationText": "Gotlands lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:26:01.745Z",
+            "StartTime": "2015-12-25T09:25:37",
+            "Text": "Ã–versikt:\nFuktiga vÃ¤gar med plusgrader i ytan.\n\nPrognos:\nIngen fÃ¶rÃ¤ndring vÃ¤ntas under dagen.  Lokalt kan hÃ¥rda vindbyar fÃ¶rekomma\n\nÃ–vrigt:\nPÃ¥ Gotland tillÃ¤mpas saltfri halkbekÃ¤mpning.\n\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n"
+          },
+          {
+            "CountyNo": [
+              5
+            ],
+            "EndTime": "2015-12-25T13:10:56",
+            "Geometry": {
+              "SWEREF99TM": "POINT (536585.74 6466336.28)",
+              "WGS84": "POINT (15.6248283 58.3364258)"
+            },
+            "Id": "SE_STA_TRISSID_1_744606",
+            "LocationText": "Ã–stergÃ¶tlands lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:11:37.207Z",
+            "StartTime": "2015-12-25T09:10:56",
+            "Text": "Ã–versikt:\nFuktiga vÃ¤gar med plusgrader i ytan.\n\nPrognos:\nInga fÃ¶rÃ¤ndringar med vÃ¤glaget vÃ¤ntas under dagen.\n\nÃ–vrigt: \n\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n"
+          },
+          {
+            "CountyNo": [
+              6
+            ],
+            "EndTime": "2015-12-25T13:44:13",
+            "Geometry": {
+              "SWEREF99TM": "POINT (462100.39 6370877.59)",
+              "WGS84": "POINT (14.3679695 57.47894)"
+            },
+            "Id": "SE_STA_TRISSID_1_744626",
+            "LocationText": "JÃ¶nkÃ¶pings lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:44:57.988Z",
+            "StartTime": "2015-12-25T09:44:13",
+            "Text": "Ã–versikt:\nVÃ¥ta och fuktiga vÃ¤gar med plusgrader i vÃ¤gytan. \n\nPrognos:\nIngen fÃ¶rvÃ¤ntad fÃ¶rÃ¤ndring av vÃ¤glaget.\n\nÃ–vrigt:\nVÃ¤glaget kan fÃ¶rÃ¤ndras snabbt. UppmÃ¤rksamma halkkÃ¤nsliga omrÃ¥den som vattendrag, skuggpartier, sÃ¤nkor och bergskÃ¤rningar. \nFÃ¶r ytterligare information om vÃ¤glaget se www.trafikverket.se alt. www.trafiken.nu\n\n"
+          },
+          {
+            "CountyNo": [
+              8
+            ],
+            "EndTime": "2015-12-25T13:44:13",
+            "Geometry": {
+              "SWEREF99TM": "POINT (557779.24 6302860.79)",
+              "WGS84": "POINT (15.9477434 56.8659172)"
+            },
+            "Id": "SE_STA_TRISSID_1_744646",
+            "LocationText": "Kalmar lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:44:58.378Z",
+            "StartTime": "2015-12-25T09:44:13",
+            "Text": "Ã–versikt:\nVÃ¥ta och fuktiga vÃ¤gar med plusgrader i vÃ¤gytan. \n\nPrognos:\nIngen fÃ¶rvÃ¤ntad fÃ¶rÃ¤ndring av vÃ¤glaget.\n\nÃ–vrigt:\nVÃ¤glaget kan fÃ¶rÃ¤ndras snabbt. UppmÃ¤rksamma halkkÃ¤nsliga omrÃ¥den som vattendrag, skuggpartier, sÃ¤nkor och bergskÃ¤rningar. \nFÃ¶r ytterligare information om vÃ¤glaget se www.trafikverket.se alt. www.trafiken.nu\n\n"
+          },
+          {
+            "CountyNo": [
+              7
+            ],
+            "EndTime": "2015-12-25T13:44:13",
+            "Geometry": {
+              "SWEREF99TM": "POINT (462898.79 6289621.28)",
+              "WGS84": "POINT (14.3933315 56.7490959)"
+            },
+            "Id": "SE_STA_TRISSID_1_744666",
+            "LocationText": "Kronobergs lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:44:58.019Z",
+            "StartTime": "2015-12-25T09:44:13",
+            "Text": "Ã–versikt:\nVÃ¥ta och fuktiga vÃ¤gar med plusgrader i vÃ¤gytan. \n\nPrognos:\nIngen fÃ¶rvÃ¤ntad fÃ¶rÃ¤ndring av vÃ¤glaget.\n\nÃ–vrigt:\nVÃ¤glaget kan fÃ¶rÃ¤ndras snabbt. UppmÃ¤rksamma halkkÃ¤nsliga omrÃ¥den som vattendrag, skuggpartier, sÃ¤nkor och bergskÃ¤rningar. \nFÃ¶r ytterligare information om vÃ¤glaget se www.trafikverket.se alt. www.trafiken.nu\n\n"
+          },
+          {
+            "CountyNo": [
+              10
+            ],
+            "EndTime": "2015-12-25T13:44:13",
+            "Geometry": {
+              "SWEREF99TM": "POINT (517505.28 6240818.3)",
+              "WGS84": "POINT (15.2829609 56.3117943)"
+            },
+            "Id": "SE_STA_TRISSID_1_744686",
+            "LocationText": "Blekinge lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:44:58.035Z",
+            "StartTime": "2015-12-25T09:44:13",
+            "Text": "Ã–versikt:\nVÃ¥ta och fuktiga vÃ¤gar med plusgrader i vÃ¤gytan. \n\nPrognos:\nIngen fÃ¶rvÃ¤ntad fÃ¶rÃ¤ndring av vÃ¤glaget.\n\nÃ–vrigt:\nVÃ¤glaget kan fÃ¶rÃ¤ndras snabbt. UppmÃ¤rksamma halkkÃ¤nsliga omrÃ¥den som vattendrag, skuggpartier, sÃ¤nkor och bergskÃ¤rningar. \nFÃ¶r ytterligare information om vÃ¤glaget se www.trafikverket.se alt. www.trafiken.nu\n\n"
+          },
+          {
+            "CountyNo": [
+              20
+            ],
+            "EndTime": "2015-12-25T12:56:58",
+            "Geometry": {
+              "SWEREF99TM": "POINT (485188.98 6733235.44)",
+              "WGS84": "POINT (14.7284212 60.7344055)"
+            },
+            "Id": "SE_STA_TRISSID_1_8126920",
+            "LocationText": "Dalarnas LÃ¤n",
+            "ModifiedTime": "2015-12-25T07:57:33.935Z",
+            "StartTime": "2015-12-25T08:56:58",
+            "Text": "Ã–versikt:\nVÃ¤glaget i lÃ¤net bestÃ¥r av Ã¶vervÃ¤gande vÃ¥ta vÃ¤gbanor med inslag av isiga partier. \n\nPrognos:\nUnder dagen finns risk fÃ¶r lokal ishalka i de vÃ¤stra delarna av lÃ¤net i samband med regn pÃ¥ kalla vÃ¤gbanor. Under dagen vÃ¤ntas inga stÃ¶rre fÃ¶rÃ¤ndringar av vÃ¤glaget.\n\nÃ–vrigt:\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n"
+          },
+          {
+            "CountyNo": [
+              22
+            ],
+            "EndTime": "2015-12-25T13:09:33",
+            "Geometry": {
+              "SWEREF99TM": "POINT (634280.16 6969483.68)",
+              "WGS84": "POINT (17.636301 62.8307724)"
+            },
+            "Id": "SE_STA_TRISSID_1_8126960",
+            "LocationText": "VÃ¤sternorrlands lÃ¤n",
+            "ModifiedTime": "2015-12-25T08:10:20.045Z",
+            "StartTime": "2015-12-25T09:09:33",
+            "Text": "Ã–versikt:\nVÃ¤glaget i lÃ¤net bestÃ¥r av Ã¶vervÃ¤gande vÃ¥ta vÃ¤gbanor med inslag av modd.\n\nPrognos:\nUnder dagen finns risk fÃ¶r lokal ishalka i hela lÃ¤net i samband med regn pÃ¥ kalla vÃ¤gbanor. \n\nFÃ¤rja:\nHemsÃ¶leden gÃ¥r enligt tidtabell. \n\nÃ–vrigt:\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n"
+          },
+          {
+            "CountyNo": [
+              21
+            ],
+            "EndTime": "2015-12-25T12:57:42",
+            "Geometry": {
+              "SWEREF99TM": "POINT (590724.3 6816377.29)",
+              "WGS84": "POINT (16.70279 61.4704742)"
+            },
+            "Id": "SE_STA_TRISSID_1_8126940",
+            "LocationText": "GÃ¤vleborgs lÃ¤n",
+            "ModifiedTime": "2015-12-25T07:58:09.442Z",
+            "StartTime": "2015-12-25T08:57:42",
+            "Text": "Ã–versikt:\nVÃ¤glaget i lÃ¤net bestÃ¥r Ã¶vervÃ¤gande av vÃ¥ta vÃ¤gar.\n\nPrognos:\nUnder dagen finns risk fÃ¶r lokal ishalka i lÃ¤nets norra delar i samband med regn pÃ¥ kalla vÃ¤gbanor. I Ã¶vrigt vÃ¤ntas ingen stÃ¶rre fÃ¶rÃ¤ndring av vÃ¤glaget.\n\nÃ–vrigt:\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se\n"
+          },
+          {
+            "CountyNo": [
+              23
+            ],
+            "EndTime": "2015-12-25T12:58:17",
+            "Geometry": {
+              "SWEREF99TM": "POINT (466440.15 7039358.66)",
+              "WGS84": "POINT (14.326333 63.4809952)"
+            },
+            "Id": "SE_STA_TRISSID_1_8126980",
+            "LocationText": "JÃ¤mtlands lÃ¤n",
+            "ModifiedTime": "2015-12-25T07:58:45.012Z",
+            "StartTime": "2015-12-25T08:58:17",
+            "Text": "Ã–versikt:\nVÃ¤glaget i lÃ¤net bestÃ¥r av Ã¶vervÃ¤gande isiga vÃ¤gbanor med inslag av packad snÃ¶.\n\nPrognos:\nUnder dagen finns risk fÃ¶r lokal ishalka i hela lÃ¤net i samband med regn pÃ¥ kalla vÃ¤gbanor. \n\nFÃ¤rja/IsvÃ¤g:\nFÃ¤rjan IsÃ¶n-NorderÃ¶n gÃ¥r enligt tidtabell.\nFÃ¤rjan HÃ¥kansta-NorderÃ¶n gÃ¥r enligt tidtabell.\nFÃ¤rjan AmmerÃ¶leden gÃ¥r enligt tidtabell. \n\nFjÃ¤llvÃ¤gar:\nVÃ¤g 531 Ã¶ver Flatruet Ã¤r nattstÃ¤ngd mellan 22:00-06:00 under perioden 1/12-15/4.\nVÃ¤gen kan Ã¤ven stÃ¤nga Ã¶vrig tid med kort varsel i samband med hÃ¥rt vÃ¤der.\nVÃ¤g 1019 till StorulvÃ¥n Ã¤r vinterstÃ¤ngd mellan 1/11 - 31/1. \nVÃ¤g 824 (StekenjokkvÃ¤gen) Leipikvattnet - KlimpfjÃ¤ll Ã¤r vinterstÃ¤ngd perioden 15/10 - 6/6.\n\nÃ–vrigt:\nFÃ¶r ytterligare information om aktuellt vÃ¤glag se www.trafikverket.se"
+          }
+        ]
+      }
+    ]
+  }
+}
