@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Flow";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <script src="~/Scripts/src/initMap.js"></script>
+    <div class="page_wrapper">
+        <div id="traffic-menu">
+            <div id="trafficConditions-toggle" class="btn traffic-toggle-off">Trafikvarning</div>
+            <div id="trafficFlow-toggle" class=" btn traffic-toggle-off">Trafikflöde</div>
+            <div id="trafficOverview-toggle" class=" btn traffic-toggle-on">Översikt</div>
+
+            @Html.ActionLink("Admin", "Index", "Admin", null, new { @class = "btn adminBtn" })
+            <div id="errorMessage"></div>
+        </div>
+        <div id="trafficOverview" class="traffic-toggle-on">
+            <div id="trafficOverview-title">Ingen data</div>
+            <div id="trafficOverview-body"></div>
+        </div>
+        <div id="map">
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+    <script defer async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXNnbuLMu7FX036ObpXDn_69YC9sqUH_I&callback=app.initMap"></script>
+    <script src="~/Scripts/src/flowApp.js"></script>
+    <script src="~/Scripts/src/dataFetcher.js"></script>
+
+
+    @*<script src="~/Scripts/src/app.js"></script>*@
+    @*<script src="~/upup.min.js"></script>*@
+    @*<script src="//cdnjs.cloudflare.com/ajax/libs/UpUp/0.2.0/upup.min.js"></script>*@
+    @*<script>
+            UpUp.start({
+                'content-url': 'offline/index.html',
+                'assets': ['/offline/offline.js', 'offline/offline.txt'],
+                'service-worker-url': 'upup.sw.min.js'
+            });
+        </script>*@
+
+</body>
+</html>

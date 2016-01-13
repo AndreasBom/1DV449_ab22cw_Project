@@ -1,0 +1,68 @@
+﻿
+@using Microsoft.AspNet.Identity
+@{
+    Layout = null;
+    ViewBag.Title = "Admin";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <h3 id="admin-header">Administration</h3>
+            </div>
+
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Registrera ny användare", "Register", "Account", null, new { @class = "register" })
+            }
+            
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="logoff go-home">
+                    @Html.ActionLink("Startsidan", "Index", "App", null, htmlAttributes: new { @class = "go-home-link", id = "go-home-link" })
+                </div>
+                <div class="logoff">
+                    <a href="javascript:document.getElementById('logoutForm').submit();" class="logoff-link" id="logoff">Logga ut</a>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="ui-corner-all ui-overlay-shadow" id="logout-message" style="display: none">
+
+    </div>
+    <div class="container body-content">
+
+        @Html.Partial("_adminPartial")
+        <hr />
+        <footer>
+            <p class="text-center" style="color: lightgray;">&copy; @DateTime.Now.Year - Flow, Developed by Andreas Bom</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script>
+        $("#logoff").hover(function () {
+            $("#logout-message").html("Om du loggar ut försvinner din startposition.Välj istället 'Startsidan'");
+            $("#logout-message").fadeToggle();
+        });
+    </script>
+
+</body>
+</html>

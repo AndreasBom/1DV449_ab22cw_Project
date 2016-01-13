@@ -422,6 +422,7 @@
     <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\" />
     <Folder Include="Views\Message\" />
     <Folder Include="Views\TrafficMessages\" />
   </ItemGroup>

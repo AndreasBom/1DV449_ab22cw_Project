@@ -50,8 +50,23 @@ namespace FlowVersion2.Controllers
             return View(_model);
         }
 
+        [HttpPost, ActionName("Index")]
+        public ActionResult Index_post()
+        {
+            var user = UserManager.FindById(User.Identity.GetUserId());
+            if (user != null)
+            {
+                _model.StartLocation = user.StartLocation;
+            }
+            return View(_model);
+        }
 
 
+        /// <summary>
+        /// Saves default location in database for each user
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Save(FormCollection collection)
         {
@@ -62,7 +77,7 @@ namespace FlowVersion2.Controllers
                 var result = UserManager.Update(user);
                 TempData["savedToXml"] = "Inställningen sparades";
                 
-                //Remove items from cache
+                //Remove items from cache when a new default location is choosen
                 MessageWebService.ClearCache();
             }
             else
@@ -74,7 +89,7 @@ namespace FlowVersion2.Controllers
             //_model.SelectedCounty = Convert.ToInt32(collection["countyDropDownList"]);
             //TempData["savedToXml"] = "Inställningen sparades";
 
-            return View("Index", _model);
+            return RedirectToAction("Index");
         }
 
     }

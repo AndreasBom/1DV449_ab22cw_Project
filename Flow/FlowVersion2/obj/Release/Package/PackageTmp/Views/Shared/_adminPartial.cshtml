@@ -1,0 +1,28 @@
+﻿@using System.Web.Mvc.Html
+@model Flow.Views.Admin.AdminChangeViewModel
+
+@using (Html.BeginForm("Save", "Admin"))
+{
+    <div class="center-div">
+        <div class="form-group">
+            <label for="countyDropDownList" class="">Förvalt län</label>
+            <select id="countyDropDownList" name="countyDropDownList" class="form-control">
+                @foreach (var county in Model.GetCounties)
+                {
+                    <option value="@county.Value"
+                            @if (county.Value == Model.StartLocation)
+                            {
+                                @: selected="selected"
+                            }>
+                        @county.Key
+                    </option>
+                }
+            </select>
+        </div>
+        <input type="submit" id="save" class="btn btn-default" value="Spara" />
+        <p class="alert-success">@TempData["savedToXml"]</p>
+            
+    </div>
+}
+
+

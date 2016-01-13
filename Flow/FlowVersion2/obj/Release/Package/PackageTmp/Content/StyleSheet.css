@@ -1,0 +1,222 @@
+﻿body {
+    padding: 0;
+}
+
+.page_wrapper {
+    width: 100vw;
+}
+.menu_wrapper {
+    position: relative;
+    background-color: black;
+    opacity: 0.5;
+    height: 100vh;
+    width: 200px;
+    float: right;
+    right: -150px;
+}
+
+.menu_icon {
+    opacity: 1;
+    color: white;
+    margin-left: 5px;
+    margin-top: 10px; 
+}
+
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+
+#traffic-menu {
+    position: absolute;
+    top: 10px;
+    z-index: 1000;
+    width: 100%;
+    clear: both;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#trafficConditions-toggle {
+    
+    top: 10px;
+    text-align: center;
+    padding-top: 9px;
+    font-size: 12px;
+    color: gray;
+}
+
+#trafficFlow-toggle {
+    
+    top: 10px;
+    z-index: 1000;
+    text-align: center;
+    padding-top: 9px;
+    font-size: 12px;
+    color: gray;
+
+}
+
+#trafficOverview-toggle {
+    
+    top: 10px;
+    z-index: 1000;
+    text-align: center;
+    padding-top: 9px;
+    font-size: 12px;
+    color: gray;
+}
+
+#trafficOverview {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 999;
+    left: 10px;
+    top: 55px;
+    background-color : transparent !important;
+}
+
+#trafficOverview-title {
+    background-color: gray;
+    height: 30px;
+    width: 100%;
+    opacity: 0.8;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    text-align: center;
+    padding-top: 1px;
+}
+
+#trafficOverview-body {
+    background-color: white;
+    min-height: 20px;
+    width: 100%;
+    opacity: 0.8;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: black;
+    padding: 10px;
+}
+
+.adminBtn {
+    top: 10px;
+    z-index: 1000;
+    text-align: center;
+    padding-top: 9px;
+    font-size: 12px;
+    color: gray;
+    background-color: white;
+    opacity: 0.8;
+    margin-left: -3px;
+    float: right;
+}
+
+
+.traffic-toggle-off:hover {
+    cursor: pointer;
+    color: black !important;
+}
+
+.traffic-toggle-on {
+    background-color: lightgreen;
+    color: white !important;
+    border-color: white !important;
+    margin-left: -3px;
+
+}
+.traffic-toggle-off {
+    background-color: white;
+    margin-left: -3px;
+
+}
+
+#admin-header {
+    color: lightgray  
+}
+
+.logoff {
+    position: absolute;
+    right: 40px;
+    bottom: 3px;
+    padding: 10px 10px 7px 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.logoff:hover {
+    background-color: gray;
+}
+
+.logoff-link {
+    color: lightgray
+}
+
+.logoff-link:hover {
+    text-decoration: none;
+    color: lightgray;
+}
+
+.go-home {
+    position: absolute;
+    right: 130px !important;
+    background-color: lightblue;
+    color: white !important;
+}
+
+.go-home-link {
+    color: white;
+}
+
+.go-home-link:hover {
+    text-decoration: none;
+    color: white;
+}
+
+#logout-message {
+    padding: 10px;
+    width: 150px;
+    position: absolute;
+    right: 30px;
+    top: 60px;
+    z-index: 10000;
+    border: 1px solid lightgray;
+}
+
+.body-content {
+    margin-top: 75px;
+}
+
+.alert-success {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+.center-div {
+    width: 300px;
+    margin: 40px auto;
+}
+
+#errorMessage {
+    position: relative;
+    left: 260px;
+    top: -35px;
+    float: left;
+    clear: both;
+    border-radius: 10px;
+    background-color: gray;
+    opacity: 0.7;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.register {
+    position: absolute;
+    right: 230px;
+    top: 35px;
+    color: lightgray;
+}

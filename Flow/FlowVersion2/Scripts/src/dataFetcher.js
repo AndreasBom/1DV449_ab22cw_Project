@@ -4,12 +4,20 @@
 //Method to fetch data RoadConditionsOverview 
 app.roadConditionsOverviewAsync = function () {
     //For testing. Gives the right url to data
+    //var urlToData = function () {
+    //    if (document.location.hostname === "localhost") {
+    //        return "http://localhost:48120/TrafficMessages/RoadConditionsOverview";
+    //    }
+    //    return "http://flowtraffic.azurewebsites.net/TrafficMessages/RoadConditionsOverview";
+    //}
+    
     var urlToData = function () {
-        if (document.location.hostname === "localhost") {
-            return "http://localhost:48120/TrafficMessages/RoadConditionsOverview";
+        if (document.location.href.indexOf("ab22cw/") > -1) {
+            return "TrafficMessages/RoadConditionsOverview";
         }
-        return "http://trafficflow.azurewebsites.net/TrafficMessages/RoadConditionsOverview";
+        return "ab22cw/TrafficMessages/RoadConditionsOverview";
     }
+
     //Ajax reques to fetch 'road conditions overview'
     $.ajax({
         type: "GET",
@@ -35,11 +43,18 @@ app.roadConditionsOverviewAsync = function () {
 //Method to fetch data RoadConditions
 app.roadConditionsAsync = function () {
     //For Testing
+    //var urlToData = function () {
+    //    if (document.location.hostname === "localhost") {
+    //        return "http://localhost:48120/TrafficMessages/RoadConditions";
+    //    }
+    //    return "http://flowtraffic.azurewebsites.net/TrafficMessages/RoadConditions";
+    //}
+
     var urlToData = function () {
-        if (document.location.hostname === "localhost") {
-            return "http://localhost:48120/TrafficMessages/RoadConditions";
+        if (document.location.href.indexOf("ab22cw/") > -1) {
+            return "TrafficMessages/RoadConditions";
         }
-        return "http://trafficflow.azurewebsites.net/TrafficMessages/RoadConditions";
+        return "ab22cw/TrafficMessages/RoadConditions";
     }
 
     //Inform user that data is loading
@@ -51,11 +66,13 @@ app.roadConditionsAsync = function () {
         dataType: "json"
     }).done(function(data) {
         console.log("Successful fetch of data (GetRoadConditions)!");
+        console.log(document.location.href);
         var notUpdatedLS = saveToLS("RoadConditions", data);
         app.getRoadConditions();
         //Data is loaded, show button text
         $("#trafficConditions-toggle").html("Trafikvarning");
     }).fail(function() {
+        console.log(document.location.href);
         try {
             app.errorMessage("Det gick inte att hämta data från servern. Sparad data hämtas");
             app.getRoadConditions();
