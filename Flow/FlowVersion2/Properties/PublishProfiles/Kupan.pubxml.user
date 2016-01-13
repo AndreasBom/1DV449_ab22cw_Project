@@ -34,7 +34,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/18/2015 22:28:32</publishTime>
     </File>
     <File Include="bin/FlowVersion2.dll">
-      <publishTime>01/13/2016 14:32:36</publishTime>
+      <publishTime>01/13/2016 16:23:33</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>12/18/2015 22:28:35</publishTime>
@@ -183,8 +183,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>01/12/2016 10:48:41</publishTime>
     </File>
+    <File Include="Content/language.css">
+      <publishTime>01/13/2016 14:50:41</publishTime>
+    </File>
     <File Include="Content/leaflet.css">
       <publishTime>01/12/2016 10:48:41</publishTime>
+    </File>
+    <File Include="Content/offline.css">
+      <publishTime>01/13/2016 14:42:49</publishTime>
     </File>
     <File Include="Content/offlineCSS.css">
       <publishTime>01/12/2016 10:48:41</publishTime>
@@ -221,6 +227,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="offline/offline.txt">
       <publishTime>01/12/2016 10:54:23</publishTime>
+    </File>
+    <File Include="offlineCheck.txt">
+      <publishTime>01/13/2016 15:40:28</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>01/12/2016 17:46:43</publishTime>
@@ -282,6 +291,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>01/12/2016 10:44:00</publishTime>
     </File>
+    <File Include="Scripts/Offline.js">
+      <publishTime>01/13/2016 15:48:48</publishTime>
+    </File>
     <File Include="Scripts/respond.js">
       <publishTime>01/12/2016 10:44:00</publishTime>
     </File>
@@ -301,13 +313,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/13/2016 14:02:24</publishTime>
     </File>
     <File Include="Scripts/src/flowApp.js">
-      <publishTime>01/12/2016 10:44:00</publishTime>
+      <publishTime>01/13/2016 16:23:13</publishTime>
     </File>
     <File Include="Scripts/src/flowUtil.js">
       <publishTime>01/12/2016 10:44:00</publishTime>
     </File>
     <File Include="Scripts/src/initMap.js">
-      <publishTime>01/12/2016 10:44:00</publishTime>
+      <publishTime>01/13/2016 15:57:02</publishTime>
+    </File>
+    <File Include="Scripts/src/offline.js">
+      <publishTime>01/13/2016 17:07:25</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>01/12/2016 10:40:17</publishTime>
@@ -349,7 +364,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/13/2016 14:19:03</publishTime>
     </File>
     <File Include="Views/App/Index.cshtml">
-      <publishTime>01/12/2016 10:55:42</publishTime>
+      <publishTime>01/13/2016 16:46:50</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>01/12/2016 10:40:08</publishTime>
@@ -400,7 +415,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/12/2016 10:40:08</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/13/2016 12:04:48</publishTime>
+      <publishTime>01/13/2016 16:23:34</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -126,28 +126,33 @@ app.addLine = function (arrayWithObjects) {
 /************** Events start ***********************/
 //Toggle road overview 
 $("#trafficOverview-toggle").on('click', function () {
-    $(this).toggleClass("traffic-toggle-off traffic-toggle-on");
-    $("#trafficOverview").fadeToggle();
-
+        $(this).toggleClass("traffic-toggle-off traffic-toggle-on");
+        $("#trafficOverview").fadeToggle();
 });
 
 //Toggle road conditions (lines)
 $("#trafficConditions-toggle").on('click', function () {
-    $(this).toggleClass("traffic-toggle-off traffic-toggle-on");
-    for (var i = 0; i < app.roadLines.length; i++) {
-        var visible = app.roadLines[i].getVisible();
-        app.roadLines[i].setVisible(!visible);
-    }
+        $(this).toggleClass("traffic-toggle-off traffic-toggle-on");
+        for (var i = 0; i < app.roadLines.length; i++) {
+            var visible = app.roadLines[i].getVisible();
+            app.roadLines[i].setVisible(!visible);
+        }
 });
 
 //Toggle road flow
+$("#trafficFlow-toggle").on('mousedown', function() {
+    Offline.check();
+});
 $("#trafficFlow-toggle").on('click', function () {
-    $(this).toggleClass("traffic-toggle-off traffic-toggle-on");
-    if (app.trafficLayer.getMap() == null) {
-        app.trafficLayer.setMap(map);
-        
-    } else {
-        app.trafficLayer.setMap(null);
+    
+    if (Offline.state !== "down") {
+        $(this).toggleClass("traffic-toggle-off traffic-toggle-on");
+        if (app.trafficLayer.getMap() == null) {
+            app.trafficLayer.setMap(map);
+
+        } else {
+            app.trafficLayer.setMap(null);
+        }
     }
 });
 

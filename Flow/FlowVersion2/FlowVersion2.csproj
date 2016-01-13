@@ -235,13 +235,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\language.css" />
     <Content Include="Content\leaflet.css" />
+    <Content Include="Content\offline.css" />
     <Content Include="Content\offlineCSS.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\StyleSheet.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="offlineCheck.txt" />
     <Content Include="offline\index.html" />
     <Content Include="offline\offline.js" />
     <Content Include="offline\offline.txt" />
@@ -279,6 +282,7 @@
     <Content Include="Scripts\leaflet-src.js" />
     <Content Include="Scripts\leaflet.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Offline.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -289,6 +293,7 @@
     <Content Include="Scripts\src\flowUtil.js" />
     <Content Include="Scripts\src\initMap.js" />
     <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\src\offline.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

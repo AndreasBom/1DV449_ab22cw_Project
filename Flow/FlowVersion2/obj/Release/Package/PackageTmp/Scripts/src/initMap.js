@@ -1,6 +1,6 @@
-﻿var lat = 62.0;
-var lng = 13.5;
-var zoom = 5;
+﻿var lat = 57.21;
+var lng = 12.72;
+var zoom = 8;
 var app = {};
 app.initMap = function() {
 

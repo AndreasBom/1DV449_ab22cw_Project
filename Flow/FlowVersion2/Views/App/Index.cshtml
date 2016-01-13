@@ -22,7 +22,7 @@
             <div id="trafficFlow-toggle" class=" btn traffic-toggle-off">Trafikflöde</div>
             <div id="trafficOverview-toggle" class=" btn traffic-toggle-on">Översikt</div>
 
-            @Html.ActionLink("Admin", "Index", "Admin", null, new { @class = "btn adminBtn" })
+            @Html.ActionLink("Admin", "Index", "Admin", null, new { @class = "btn adminBtn", id = "adminBtn" })
             <div id="errorMessage"></div>
         </div>
         <div id="trafficOverview" class="traffic-toggle-on">
@@ -35,10 +35,11 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 
-
+    <script src="~/Scripts/src/offline.js"></script>
     <script defer async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXNnbuLMu7FX036ObpXDn_69YC9sqUH_I&callback=app.initMap"></script>
     <script src="~/Scripts/src/flowApp.js"></script>
     <script src="~/Scripts/src/dataFetcher.js"></script>
+
 
 
     @*<script src="~/Scripts/src/app.js"></script>*@
@@ -51,6 +52,6 @@
                 'service-worker-url': 'upup.sw.min.js'
             });
         </script>*@
-
+    
 </body>
 </html>

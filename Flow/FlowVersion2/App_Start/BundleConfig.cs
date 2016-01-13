@@ -18,12 +18,15 @@ namespace FlowVersion2
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/Offline.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
-                      "~/Content/StyleSheet.css"));
+                      "~/Content/StyleSheet.css",
+                      "~/Content/offline.css", 
+                      "~/Content/language.css"));
         }
     }
 }
