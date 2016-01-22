@@ -16,7 +16,8 @@ Flödesdiagram över applikationen kan ses i filen 'documentations/flödesdiagra
 
 
 ###Säkerhet och prestandaoptimering
-Appen har en logginfunktion, där användruppgifter sparas i en databas. Lösenordet sparas i databasen som en hash, och kan inte återskapas. Inloggningen sker via en sessionskaka. Alla formulär använder sig av en antiforgery kod, för att motverka CSRF attacker. All indata valideras, dels på klienten, dels på servern för att inte otillåtna tecken ska nå databasen.    
+Appen har en logginfunktion, där användruppgifter sparas i en databas. Lösenordet sparas i databasen som en hash, och kan inte återskapas. Inloggningen sker via en sessionskaka. Alla formulär använder sig av en antiforgery kod, för att motverka CSRF attacker. All indata valideras, dels på klienten, dels på servern för att inte otillåtna tecken ska nå databasen.   
+Logginfunktionen har två roller. Administratörsrollen har rättigheter att skapa nya användare, samt ändra län. Användarrollen saknar funktionen att skapa nya användare, men kan ändra län.    
     
 
 ###Offline-first    
