@@ -11,11 +11,12 @@ Appens målgrupp är ambulanspersonal. Genom att tillhandahålla aktuellt vägla
 Applikationens backend är skriven i ASP.NET MVC. Databaskommunikationen till MSSQL sker via ramverket Entity Frameworks. Inloggningen är gjord i Microsofts Identity, som kan ses som en bootstrap. Till front-end har javascript och JQuery används. Offline.js är ett API som kontrollerar om applikationen är on- eller offline. Google maps Api används för kart- och positionering, och Trafikverkets API används för insamling av trafikinformation. 
 
 
-###Schematisk bild över applikationen
+###Schematisk bild över applikationen   
+Flödesdiagram över applikationen kan ses i filen 'documentations/flödesdiagram.jpg'
 
 
 ###Säkerhet och prestandaoptimering
-Appen har en logginfunktion, där användruppgifter sparas i en databas. Lösenordet sparas i databasen som en hash, och kan inte återskapas. Inloggningen sker via en sessionskaka. Alla formulär använder sig av en antiforgery kod, för att motverka CS???????. All indata valideras, dels på klienten, dels på servern för att inte otillåtna tecken ska nå databasen.    
+Appen har en logginfunktion, där användruppgifter sparas i en databas. Lösenordet sparas i databasen som en hash, och kan inte återskapas. Inloggningen sker via en sessionskaka. Alla formulär använder sig av en antiforgery kod, för att motverka CSRF attacker. All indata valideras, dels på klienten, dels på servern för att inte otillåtna tecken ska nå databasen.    
     
 
 ###Offline-first    
@@ -39,9 +40,7 @@ Jag hade initialt en web service som backend, som skickade jsonformaterad data. 
 Jag använde ett hjälpramverk till Service workers. När detta användes slutade url'er att fungera (bl.a. de url'erna som användes för att hämta data). Jag tog bort detta, men det tog flera dagar innan jag tillslut kom på att service workern var registrerad i chrome, trots att jag tagit bort koden i mitt projekt. Därför fungerade appen endast på remote server, men inte lokalt. 
 
 #####Serverplatsproblem    
-På mitt webbhotel fungerade inte appen (men fungerade lokalt). Jag konsulterade Mats om problemet och han hade aldrig varit med om detta tidigare och hade ingen lösning. Istället testade jag att ladda upp appen på Azure (Microsoft). Detta gick inte heller. Jag tror att problemet där bestod i att deras brandvägg blockerade åtkomst till skolans databas (eller så blockerade skolan åtkomst). När jag la webserver och databas på skolans server fungerade det.
+På mitt webbhotel fungerade inte appen (men fungerade lokalt). Jag konsulterade Mats om problemet och han hade aldrig varit med om detta tidigare och hade ingen lösning. Istället testade jag att ladda upp appen på Azure (Microsoft). Detta gick inte heller. Jag tror att problemet där bestod i att deras brandvägg blockerade åtkomst till skolans databas (eller så blockerade skolan åtkomst). När jag installerade webserver och databas på skolans server fungerade det.
 
-
-###Delar som är betygshöjande
 
 
