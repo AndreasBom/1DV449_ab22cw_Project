@@ -14,7 +14,7 @@ email: kalmar@kalmar.se
 lösenord: kalmar   
    
    
-Källkoden för slutprodukten ligger i katalogen 'Flow/FlowVersion2'. Dokumentationen finns i katalogen Documents.    
+Källkoden för slutprodukten ligger i katalogen 'Flow/FlowVersion2'. Dokumentationen finns i katalogen Documentations.    
    
    
  
