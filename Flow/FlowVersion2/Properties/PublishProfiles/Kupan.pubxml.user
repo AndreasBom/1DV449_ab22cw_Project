@@ -199,7 +199,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/12/2016 10:48:41</publishTime>
     </File>
     <File Include="Content/StyleSheet.css">
-      <publishTime>01/13/2016 14:18:10</publishTime>
+      <publishTime>01/13/2016 17:13:57</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>01/12/2016 10:40:08</publishTime>
@@ -322,7 +322,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/13/2016 15:57:02</publishTime>
     </File>
     <File Include="Scripts/src/offline.js">
-      <publishTime>01/13/2016 17:07:25</publishTime>
+      <publishTime>01/13/2016 17:17:17</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>01/12/2016 10:40:17</publishTime>
